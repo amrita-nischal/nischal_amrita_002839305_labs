@@ -9,6 +9,8 @@ package model;
  * @author amritanischal
  */
 public class VitalSigns {
+    
+    //Vital Signs model
 
     private double temperature;
     private double bloodPressure;
