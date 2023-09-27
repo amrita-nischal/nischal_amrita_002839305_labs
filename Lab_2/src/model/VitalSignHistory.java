@@ -25,5 +25,16 @@ public class VitalSignHistory {
     public void setHistory(ArrayList<VitalSigns> history) {
         this.history = history;
     }
+
+    public VitalSigns addNewVitals() {
+        VitalSigns newVitals = new VitalSigns();
+        history.add(newVitals);
+        return newVitals;
+
+    }
     
+    public void deleteVitals(VitalSigns vs){
+        history.remove(vs);
+    }
+
 }
