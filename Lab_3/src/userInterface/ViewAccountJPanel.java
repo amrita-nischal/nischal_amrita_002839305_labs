@@ -204,13 +204,19 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
             String accountNumber = txtAccountNumber.getText();
             String bankName = txtBankName.getText();
 
-            account.setRoutingNumber(routingNumber);
-            account.setAccountNumber(accountNumber);
-            account.setBankName(bankName);
-            btnSave.setEnabled(false);
-            btnUpdate.setEnabled(true);
+            if (Account.isValidName(bankName) && Account.isValidNumber(routingNumber) && Account.isValidNumber(accountNumber)) {
+                account.setRoutingNumber(routingNumber);
+                account.setAccountNumber(accountNumber);
+                account.setBankName(bankName);
+                btnSave.setEnabled(false);
+                btnUpdate.setEnabled(true);
 
-            JOptionPane.showMessageDialog(this, "Account Updated Successfully!");
+                JOptionPane.showMessageDialog(this, "Account Updated Successfully!");
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Please enter valid values!");
+            }
+
         }
 
     }//GEN-LAST:event_btnSaveActionPerformed

@@ -62,7 +62,15 @@ public class Account {
     public String toString() {
         return this.getBankName();
     }
+
+    public static boolean isValidName(String str) {
+        String expression = "^[a-zA-Z\\s]+";
+        return str.trim().matches(expression);
+    }
     
-    
+    public static boolean isValidNumber(String str) {
+        String expression = "^[0-9]*$";
+        return str.trim().matches(expression);
+    }
 
 }
